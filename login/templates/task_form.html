@@ -1,11 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+Task Form
+{% endblock %}
+
+{% block content %}
+
 <h2>Task Form</h2>
 
-<form method="POST">
-  {% csrf_token %}
-
-  {{ form.as_p }}
-
-  <button type="submit">Save Task</button>
+<form method="POST" class="main-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Task</button>
 </form>
 
-<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+<p style="text-align:center;">
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+</p>
+
+{% endblock %}
