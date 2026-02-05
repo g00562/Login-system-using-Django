@@ -7,8 +7,14 @@
   {% for task in tasks %}
     <li>
       {{ task.title }}
+
       <a href="{% url 'update_task' task.id %}">Edit</a>
-      <a href="{% url 'delete_task' task.id %}">Delete</a>
+
+      <form action="{% url 'delete_task' task.id %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+      </form>
+
     </li>
   {% empty %}
     <li>No tasks yet</li>
