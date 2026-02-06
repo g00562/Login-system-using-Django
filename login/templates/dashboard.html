@@ -15,17 +15,30 @@ Dashboard
 <ul>
 {% for task in tasks %}
     <li>
-        <span>{{ task.title }}</span>
 
-        <span>
-            <a href="{% url 'update_task' task.id %}">Edit</a>
+        <!-- ✅ TASK TEXT (this was missing) -->
+        <div class="task-text">
+            {{ task.title }}
+        </div>
 
-            <form action="{% url 'delete_task' task.id %}" method="POST" style="display:inline;">
+        <!-- ACTION BUTTONS -->
+        <div class="task-actions">
+            <a href="{% url 'update_task' task.id %}" 
+               class="action-btn edit-btn">
+                Edit
+            </a>
+
+            <form action="{% url 'delete_task' task.id %}" method="POST">
                 {% csrf_token %}
-                <button type="submit">Delete</button>
+                <button type="submit" 
+                        class="action-btn delete-btn">
+                    Delete
+                </button>
             </form>
-        </span>
+        </div>
+
     </li>
+
 {% empty %}
     <li>No tasks yet</li>
 {% endfor %}
