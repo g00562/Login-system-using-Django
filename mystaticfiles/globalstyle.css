@@ -1,4 +1,3 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,88 +5,196 @@
 }
 
 /* Page */
+
 body {
-    font-family: Arial, sans-serif;
-    background: #222;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #38223f, #111827);
+    padding: 40px;
     color: white;
-    padding: 20px;
 }
 
 /* Header */
+
 header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+header a {
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+header a:hover {
+    color: #ffd369;
+}
+
+/* Headings */
+
+h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-header a {
-    color: yellow;
-    margin: 0 10px;
-    text-decoration: none;
-}
+/* Forms + cards */
 
-/* Titles */
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* Form + list container */
 .main-form,
 ul {
-    background: #333;
-    padding: 15px;
-    max-width: 600px;
-    margin: 15px auto;
-    border-radius: 6px;
+    background: linear-gradient(145deg, #1f1c2c, #2a2440);
+    border-radius: 14px;
+    padding: 30px;
+    max-width: 550px;
+    margin: 20px auto;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+    color: #f5f5f5;
 }
 
 /* Inputs */
+
 input,
 textarea {
     width: 100%;
-    padding: 8px;
-    margin: 6px 0;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+input:focus {
+    box-shadow: 0 0 8px #ffd369;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* Buttons */
+
 button {
-    padding: 6px 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff5a00, #ee0979);
+    color: white;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.2s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 /* Task list */
+
 ul {
     list-style: none;
 }
 
-/* 🔥 KEY FIX — stable layout */
 li {
-    background: #444;
-    padding: 8px;
-    margin: 6px 0;
-    border-radius: 6px;
-
-    display: grid;
-    grid-template-columns: 1fr auto;  /* text | buttons */
-    gap: 10px;
+    background: linear-gradient(145deg, #2f2b45, #3b3560);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 /* Task text */
+
 .task-text {
+    flex: 1;
+    min-width: 0;
     overflow-wrap: break-word;
-    word-break: break-word;
+    color: white;
 }
 
-/* Buttons area */
+/* Task buttons */
+
 .task-actions {
     display: flex;
-    gap: 6px;
-    white-space: nowrap; /* prevents button wrapping */
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.task-actions form {
+    margin: 0;
+}
+
+/* Shared action button style */
+
+.action-btn {
+    min-width: 80px;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* Edit */
+
+.edit-btn {
+    background: #facc15;
+    color: #111;
+}
+
+/* Delete */
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+/* Hover */
+
+.edit-btn:hover,
+.delete-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Django help text */
+
+.helptext {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.helptext ul {
+    font-size: 12px;
+    padding-left: 18px;
+}
+
+.helptext li {
+    margin: 4px 0;
 }
 
 /* Error message */
+
 .error {
-    color: red;
     text-align: center;
+    color: #ff4d4d;
+    font-weight: bold;
 }
