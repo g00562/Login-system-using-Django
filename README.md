@@ -107,3 +107,4 @@ http://127.0.0.1:8000
 * This project is for learning and demonstration purposes.
 * SQLite is used by default but can be replaced with other databases.
 * Static files are stored inside the app for simplicity.
+
